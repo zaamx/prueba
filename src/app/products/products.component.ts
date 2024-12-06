@@ -12,9 +12,13 @@ import { FormControl } from '@angular/forms';
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
-  imports: [MatFormFieldModule, MatInputModule, MatSelectModule, ReactiveFormsModule],
+  imports: [
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
-
 })
 export class ProductsComponent implements OnInit {
 

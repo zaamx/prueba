@@ -1,14 +1,14 @@
-<form formGroup="product">
+<form [formGroup]="product">
     <mat-form-field>
-    <input matInput placeholder="id " formControl="id">
-</mat-form-field>
-<mat-form-field>
-    <input matInput placeholder="Nombre" formControl="name">
-</mat-form-field>
-    <mat-form-field>
-        <input matInput placeholder="Price" formControl="price">
+        <input matInput placeholder="id" formControlName="id">
     </mat-form-field>
     <mat-form-field>
-    <input matInput placeholder="category" formControl="category">
-</mat-form-field>
-  </form>
+        <input matInput placeholder="Nombre" formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Price" formControlName="price">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="category" formControlName="category">
+    </mat-form-field>
+</form>
