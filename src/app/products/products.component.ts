@@ -6,12 +6,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
-  imports: [MatFormFieldModule, MatInputModule, MatSelectModule],
+  imports: [MatFormFieldModule, MatInputModule, MatSelectModule, ReactiveFormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 
 })
@@ -23,11 +24,10 @@ export class ProductsComponent implements OnInit {
   constructor(private apiService: ApiService, fb: FormBuilder) {
 
     this.product = fb.group({
-      id: ['', Validators.required],  
-      name: ['', Validators.required], 
-      price: ['', [Validators.required]],
-      category: ['', Validators.required]
-    
+      id: ['', Validators.required],  // 'id' control
+      name: ['', Validators.required],  // 'name' control
+      price: ['', [Validators.required, Validators.pattern('^[0-9]+(\\.[0-9]{1,2})?$')]],  // 'price' control with validation
+      category: ['', Validators.required]  // 'category' control
     });
   }
 
